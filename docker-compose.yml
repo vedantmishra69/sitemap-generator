@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  sitemap-generator:
+    build: .
+    volumes:
+      - ./output:/app/output
+    environment:
+      - WEBSITE_URL=${WEBSITE_URL:-https://example.com}
+      - MAX_PAGES=${MAX_PAGES:-500}
+    restart: "no"
